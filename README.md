@@ -25,7 +25,7 @@ List the frequency counts, in descending order, of all the employee last names (
 * 04 : https://www.w3resource.com/mysql-exercises/restricting-and-sorting-data-exercises/write-a-query-to-display-the-names-and-hire-date-for-all-employees-who-were-hired-in-1987.php
 * 05 : https://www.c-sharpcorner.com/blogs/sql-query-to-find-out-the-frequency-of-each-element-in-a-column1
 
-* source 01 - composite keys used to reference foreign keys
+* * source 01 - composite keys used to reference foreign keys
     
     constraint "pk_dept_no" primary key(dept_no)
 
@@ -33,23 +33,23 @@ List the frequency counts, in descending order, of all the employee last names (
 	    add constraint "fk_dept_emp_emp_no" foreign key(emp_no)
 	    references employees(emp_no);
 
-* source 02 - to find relationships using join and on
+* * source 02 - to find relationships using join and on
 
     select e.emp_no, e.last_name, e.first_name, e.sex, s.salary
     from employees as e
     join salaries as s
     on e.emp_no = s.emp_no;
 
-* source 03 - use "as" to simplify referencing tables
+* * source 03 - use "as" to simplify referencing tables
 
     from employees as e
     join salaries as s
 
-* source 04 - Find dates using like
+* * source 04 - Find dates using like
 
     where hire_date like '%1986';
 
-* source 05 - find frequency count
+* * source 05 - find frequency count
 
     select last_name, count(last_name) as frequency
     from employees
